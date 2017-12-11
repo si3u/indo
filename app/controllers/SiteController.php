@@ -116,6 +116,7 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
+        $this->layout = 'base';
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
@@ -137,6 +138,7 @@ class SiteController extends Controller
      */
     public function actionRequestPasswordReset()
     {
+        $this->layout = 'base';
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
@@ -162,6 +164,7 @@ class SiteController extends Controller
      */
     public function actionResetPassword($token)
     {
+        $this->layout = 'base';
         try {
             $model = new ResetPasswordForm($token);
         } catch (InvalidParamException $e) {

@@ -2,7 +2,7 @@
 
 namespace app\constants;
 
-class Role {
+class Roles {
     const EMPLOYEE = 10;
     const SALES = 50;
     const DESIGNER = 60;
